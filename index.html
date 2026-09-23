@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>E-commerce MASTER Preview</title>
+<style>
+:root{--ink:#0e1824;--paper:#f6f1e7;--green:#173f35;--muted:#6d746f;--line:#d9d2c5;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+a{color:inherit;text-decoration:none}.wrap{max-width:1280px;margin:auto;padding:0 28px}
+.notice{background:#101820;color:#fff;padding:10px 20px;text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(246,241,231,.94);backdrop-filter:blur(10px);z-index:20}
+.brand{font-weight:900;letter-spacing:.08em;font-size:20px}.nav{display:flex;gap:24px;font-size:13px;text-transform:uppercase;letter-spacing:.08em}.bag{border:0;background:none;font:inherit;cursor:pointer}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;min-height:620px;border-bottom:1px solid var(--line)}
+.hero-copy{padding:90px 7vw 70px 0;display:flex;flex-direction:column;justify-content:center}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:Georgia,serif;font-size:clamp(62px,8vw,130px);line-height:.82;margin:18px 0 30px;font-weight:500}.hero p{max-width:600px;font-size:18px;line-height:1.65;color:#39433f}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;background:var(--green);color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;width:max-content;margin-top:18px;border:0;cursor:pointer}
+.hero-art{background:linear-gradient(145deg,#173f35,#0d1c23 65%,#6f8b74);position:relative;overflow:hidden}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.25);border-radius:999px}.hero-art:before{width:360px;height:520px;right:-90px;top:40px;transform:rotate(22deg)}.hero-art:after{width:290px;height:430px;left:50px;bottom:-120px;transform:rotate(-28deg)}.hero-art span{position:absolute;left:36px;bottom:32px;color:#fff;font-family:Georgia,serif;font-size:44px;max-width:300px;line-height:1.02}
+.section{padding:80px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}.section h2{font-family:Georgia,serif;font-size:48px;font-weight:500;margin:6px 0}.section-head p{max-width:520px;color:var(--muted);line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line)}.art{aspect-ratio:4/5;background:linear-gradient(160deg,#e6ded0,#c8d2c8);display:flex;align-items:flex-end;padding:22px;font-family:Georgia,serif;font-size:34px}.art.alt{background:linear-gradient(160deg,#cfd7dd,#949fa7)}.art.dark{background:linear-gradient(160deg,#20382f,#0c1714);color:#fff}.card-copy{padding:18px}.card-copy strong{display:block;font-size:17px}.meta{display:flex;justify-content:space-between;color:var(--muted);margin-top:10px;font-size:13px}
+.features{background:#101820;color:#fff}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#34404a}.feature{background:#101820;padding:28px}.feature b{display:block;margin-bottom:10px}.feature p{color:#b8c1c7;line-height:1.55;font-size:14px}
+.admin{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px}.panel{background:#fff;border:1px solid var(--line);padding:26px}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{border:1px solid var(--line);padding:18px}.metric span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.09em}.metric strong{font-size:28px}.table{margin-top:18px}.row{display:grid;grid-template-columns:1.5fr .8fr .8fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
+footer{border-top:1px solid var(--line);padding:34px 0 50px;color:var(--muted);font-size:13px}
+.drawer{position:fixed;top:0;right:-420px;width:min(420px,94vw);height:100vh;background:#fff;z-index:50;box-shadow:-20px 0 50px rgba(0,0,0,.12);padding:26px;transition:.28s ease}.drawer.open{right:0}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}.drawer button{cursor:pointer}.drawer-item{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:40;opacity:0;pointer-events:none;transition:.28s}.overlay.open{opacity:1;pointer-events:auto}.badge{display:inline-block;background:#e7efe9;color:#173f35;padding:7px 10px;border-radius:99px;font-size:12px;font-weight:700}
+@media(max-width:820px){.nav{display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero-copy{padding:64px 0}.hero-art{min-height:380px}.grid{grid-template-columns:1fr 1fr}.feature-grid{grid-template-columns:1fr 1fr}.admin{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:0 18px}.grid,.feature-grid,.metric-grid{grid-template-columns:1fr}.section{padding:58px 0}.section h2{font-size:38px}h1{font-size:64px}.hero-art{min-height:320px}}
+</style>
+</head>
+<body>
+<div class="notice">Reusable MASTER · Preview only · No client data</div>
+<div class="wrap">
+<header>
+<a class="brand" href="#">YOUR STORE</a>
+<nav class="nav"><a href="#shop">Shop</a><a href="#story">Story</a><a href="#admin">Admin</a></nav>
+<button class="bag" id="bagBtn">Bag <strong id="bagCount">0</strong></button>
+</header>
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow">STORE / REUSABLE E-COMMERCE MASTER</div>
+<h1>Build the brand.<br>Own the store.</h1>
+<p>This is the neutral reusable storefront preview. Each client gets a separate repository, backend, merchant account, deployment and domain.</p>
+<a class="cta" href="#shop">Explore the template</a>
+</div>
+<div class="hero-art"><span>Your brand photography goes here.</span></div>
+</section>
+
+<section class="section" id="shop">
+<div class="section-head"><div><div class="eyebrow">CATALOGUE / 01</div><h2>Collection preview</h2></div><p>Products, prices, sizes, colours, stock, imagery and visibility are managed from the client-specific admin area.</p></div>
+<div class="grid">
+<article class="card"><div class="art">Essential Tee</div><div class="card-copy"><strong>Essential T-Shirt</strong><div class="meta"><span>Black / Cream</span><span>R350</span></div><button class="cta add" data-name="Essential T-Shirt" data-price="350">Add to bag</button></div></article>
+<article class="card"><div class="art alt">Layer 02</div><div class="card-copy"><strong>Signature Hoodie</strong><div class="meta"><span>Stone / Charcoal</span><span>R650</span></div><button class="cta add" data-name="Signature Hoodie" data-price="650">Add to bag</button></div></article>
+<article class="card"><div class="art dark">Outerwear</div><div class="card-copy"><strong>Utility Jacket</strong><div class="meta"><span>Forest / Black</span><span>R850</span></div><button class="cta add" data-name="Utility Jacket" data-price="850">Add to bag</button></div></article>
+</div>
+</section>
+</div>
+
+<section class="features section" id="story">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow" style="color:#9eaaa4">PLATFORM / 02</div><h2>Built for handover.</h2></div><span class="badge">Client-independent foundation</span></div>
+<div class="feature-grid">
+<div class="feature"><b>Storefront</b><p>Responsive catalogue, product pages, cart and checkout journey.</p></div>
+<div class="feature"><b>Payments</b><p>Yoco hosted checkout plus optional manual EFT fallback.</p></div>
+<div class="feature"><b>Operations</b><p>Orders, stock, fulfilment statuses and customer tracking.</p></div>
+<div class="feature"><b>Owner control</b><p>Products, images, categories, policies and content remain editable by the client.</p></div>
+</div>
+</div>
+</section>
+
+<div class="wrap">
+<section class="section admin" id="admin">
+<div>
+<div class="eyebrow">ADMIN / 03</div><h2>Owner-operated.</h2>
+<p style="color:var(--muted);line-height:1.7">The production implementation connects this interface to a separate backend and protected admin authentication. This public preview deliberately contains no credentials, real orders or client information.</p>
+</div>
+<div class="panel">
+<div class="metric-grid">
+<div class="metric"><span>Products</span><strong>12</strong></div>
+<div class="metric"><span>Orders</span><strong>24</strong></div>
+<div class="metric"><span>Low stock</span><strong>3</strong></div>
+<div class="metric"><span>Payment mode</span><strong style="font-size:18px">TEST</strong></div>
+</div>
+<div class="table">
+<div class="row"><b>Recent order</b><b>Payment</b><b>Status</b></div>
+<div class="row"><span>STORE-4A7C91</span><span>Paid</span><span>Processing</span></div>
+<div class="row"><span>STORE-918DF2</span><span>EFT review</span><span>Pending</span></div>
+<div class="row"><span>STORE-B0F32A</span><span>Paid</span><span>Shipped</span></div>
+</div>
+</div>
+</section>
+<footer>Reusable E-commerce MASTER · Neutral preview · Separate infrastructure required per client.</footer>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+<div class="drawer-head"><strong>Shopping bag</strong><button id="closeBtn">Close</button></div>
+<div id="drawerItems"><p style="color:var(--muted)">Your bag is empty.</p></div>
+<div id="drawerTotal" style="padding-top:22px;font-size:18px;font-weight:800"></div>
+</aside>
+<script>
+const items=[];const drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay'),count=document.getElementById('bagCount'),itemsEl=document.getElementById('drawerItems'),totalEl=document.getElementById('drawerTotal');
+function render(){count.textContent=items.length;itemsEl.innerHTML=items.length?items.map(x=>'<div class="drawer-item"><span>'+x.name+'</span><strong>R'+x.price+'</strong></div>').join(''):'<p style="color:var(--muted)">Your bag is empty.</p>';totalEl.textContent=items.length?'Preview total: R'+items.reduce((a,b)=>a+b.price,0):''}
+function openBag(){drawer.classList.add('open');overlay.classList.add('open')}function closeBag(){drawer.classList.remove('open');overlay.classList.remove('open')}
+document.querySelectorAll('.add').forEach(b=>b.addEventListener('click',()=>{items.push({name:b.dataset.name,price:Number(b.dataset.price)});render();openBag()}));
+document.getElementById('bagBtn').onclick=openBag;document.getElementById('closeBtn').onclick=closeBag;overlay.onclick=closeBag;render();
+</script>
+</body></html>
